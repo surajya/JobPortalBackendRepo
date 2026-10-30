@@ -15,7 +15,6 @@
             </pattern>
         </encoder>
     </appender>
-    <appender name="OTEL" class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender"></appender>
     <!--  =====================  -->
     <!--  Rolling File Appender  -->
     <!--  =====================  -->
@@ -33,38 +32,6 @@
         </rollingPolicy>
     </appender>
 
-    <springProfile name="prod">
-        <!--  =====================  -->
-        <!--  Root Logger  -->
-        <!--  =====================  -->
-        <root level="ERROR">
-            <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
-        </root>
-        <!--  =====================  -->
-        <!--  Application-specific ERROR logs  -->
-        <!--  =====================  -->
-        <logger name="com.sp.jobportal" level="ERROR" additivity="false">
-            <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
-        </logger>
-    </springProfile>
-    <springProfile name="qa">
-        <!--  =====================  -->
-        <!--  Root Logger  -->
-        <!--  =====================  -->
-        <root level="INFO">
-            <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
-        </root>
-        <!--  =====================  -->
-        <!--  Application-specific ERROR logs  -->
-        <!--  =====================  -->
-        <logger name="com.sp.jobportal" level="INFO" additivity="false">
-            <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
-        </logger>
-    </springProfile>
     <springProfile name="default">
         <!--  =====================  -->
         <!--  Root Logger  -->
@@ -72,7 +39,6 @@
         <root level="INFO">
             <appender-ref ref="Console"/>
             <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
         </root>
         <!--  =====================  -->
         <!--  Application-specific ERROR logs  -->
@@ -80,7 +46,6 @@
         <logger name="com.sp.jobportal" level="INFO" additivity="false">
             <appender-ref ref="Console"/>
             <appender-ref ref="RollingFile"/>
-            <appender-ref ref="OTEL"/>
         </logger>
     </springProfile>
 
