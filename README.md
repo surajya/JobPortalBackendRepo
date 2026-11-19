@@ -3,6 +3,7 @@
 A role-based job portal backend built using Java 21 and Spring Boot 4. The platform connects job seekers with employers, allowing companies to publish job opportunities and candidates to discover, save, and apply for jobs.
 
 Designed with a layered architecture, JWT authentication, PostgreSQL, Redis caching, and modern Spring Boot technologies.
+Note: Currently server deploy on 'Render', For startup it will take 4 min only for the first time.
 
 <p align="center">
   <a href="https://jobportalfrontendrepo.onrender.com/" target="_blank">
