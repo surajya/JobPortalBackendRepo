@@ -502,9 +502,11 @@ jobs:
 
 ## 🤝 Frontend
 
-The frontend is developed using React.
+The frontend is developed separately using React.
 
 Live URL: https://jobportalfrontendrepo.onrender.com/
+
+Frontend Repository: Add your frontend GitHub repository link.
 
 ---
 
