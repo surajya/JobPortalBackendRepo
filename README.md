@@ -508,7 +508,7 @@ The frontend is developed separately using React.
 
 Live URL: https://jobportalfrontendrepo.onrender.com/
 
-Frontend Repository: Add your frontend GitHub repository link.
+Frontend Repository: [frontend GitHub repository.](https://github.com/surajya/JobPortalFrontEndRepo)
 
 ---
 
