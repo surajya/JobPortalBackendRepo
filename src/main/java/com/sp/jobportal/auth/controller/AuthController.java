@@ -42,7 +42,6 @@ public class AuthController {
     public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequest) {
         log.info("Received login request for username: {}", loginRequest.username());
         try {
-            System.out.println("username : {} password : {}" + loginRequest.username() + " " + loginRequest.password());
             Authentication resultAuthenticate =
                     authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                             loginRequest.username(), loginRequest.password()));
@@ -73,7 +72,7 @@ public class AuthController {
         JobPortalUser jobPortalUser = new JobPortalUser();
         BeanUtils.copyProperties(registerRequestDto, jobPortalUser);
         jobPortalUser.setPasswordHash(passwordEncoder.encode(registerRequestDto.password()));
-        Role role = roleRepository.findRoleByName(ApplicationConstants.ROLE_ADMIN)
+        Role role = roleRepository.findRoleByName(ApplicationConstants.ROLE_JOB_SEEKER)
                 .orElseThrow(() -> new IllegalArgumentException("Role not found: " +
                         ApplicationConstants.ROLE_JOB_SEEKER));
         jobPortalUser.setRole(role);
